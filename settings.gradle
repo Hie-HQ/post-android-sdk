@@ -6,12 +6,16 @@ pluginManagement {
         maven { url "https://jitpack.io" }
     }
 }
+
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io"
+            credentials { username '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' }
+        }
     }
 }
 rootProject.name = "POST_sdk"
