@@ -1,15 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.post_lib"
-        minSdk 21
-        targetSdk 32
+        minSdk 23
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -29,6 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    android {
+        buildFeatures {
+            compose = true
+        }
+
+        composeOptions {
+            kotlinCompilerExtensionVersion = "1.4.4"
+        }
+    }
 }
 
 dependencies {
@@ -37,7 +51,33 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':POST_sdk')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    // You also need to include the following Compose toolkit dependencies.
+    implementation 'androidx.compose.ui:ui:1.5.0-alpha02'
+    implementation 'androidx.compose.material:material:1.5.0-alpha02'
+    implementation 'androidx.ui:ui-tooling:1.0.0-alpha07'
+
+
+
+    implementation "androidx.work:work-runtime:2.8.1"
+
+    //Multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+    //hilt
+    implementation 'com.google.dagger:hilt-android:2.43.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:hilt-compiler:2.43.2'
+    implementation 'com.google.dagger:dagger:2.44'
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0'
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+
+
 }

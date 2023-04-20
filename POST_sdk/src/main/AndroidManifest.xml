@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.post_sdk">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.post_sdk">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+
+        >
+        <activity
+            android:name=".ui.pages.profile.SetUpProfilePage"
+            android:exported="false"
+            android:label="@string/title_activity_set_up_profile_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.POST_sdk" />
+        <activity
+            android:name=".ui.pages.otp_verification.OtpVerificationPage"
+            android:exported="false"
+            android:label="@string/title_activity_otp_verification_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.POST_sdk" />
+        <activity
+            android:name=".ui.pages.login.OnBoardingPage"
+            android:exported="false"
+            android:label="@string/title_activity_on_boarding_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.POST_sdk" />
+    </application>
 
 </manifest>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="title_activity_on_boarding_page">OnBoardingPage</string>
+    <string name="title_activity_otp_verification_page">OtpVerificationPage</string>
+    <string name="title_activity_set_up_profile_page">SetUpProfilePage</string>
+    <string name="error_something_went_wrong">Something went wrong</string>
+    <string name="error_no_internet_connection">No Internet connection available</string>
+
+    // set up profile
+    <string name="set_up_profile">Set up your profile</string>
+    <string name="auto_generated_sign_up_id">Auto generated signup ID</string>
+    <string name="full_name">Full Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="i_agree_with">I agree with</string>
+    <string name="terms_and_condition"><u>terms &amp; conditions</u></string>
+</resources>
