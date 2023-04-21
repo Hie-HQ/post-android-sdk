@@ -95,7 +95,7 @@ fun OtpVerification(
        if (customForm.backgroundImage!=null)
        {
            GlideImage(
-               model = BuildConfig.S3_BASE_URL+customForm.backgroundImage,
+               model = PostSdkConstants.NetworkingConstants.S3_BASE_URL.value+customForm.backgroundImage,
                contentDescription ="",
                modifier = Modifier.fillMaxSize(),
                contentScale = ContentScale.FillBounds

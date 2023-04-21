@@ -29,10 +29,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.multidex.BuildConfig
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.post_sdk.BuildConfig
+
 import com.post_sdk.R
 import com.post_sdk.initialization.MyDataCallback
 import com.post_sdk.model.request.GenerateOtpRequest
@@ -128,7 +129,7 @@ fun LoginPage(bundle: Bundle, backgroundColor: MutableState<Color>) {
                     if (response.data.customForm.backgroundImage!=null)
                     {
                         GlideImage(
-                            model = BuildConfig.S3_BASE_URL+response.data.customForm.backgroundImage,
+                            model = PostSdkConstants.NetworkingConstants.S3_BASE_URL.value+response.data.customForm.backgroundImage,
                             contentDescription ="",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.FillBounds

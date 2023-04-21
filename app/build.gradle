@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+    }
+}
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -35,32 +45,52 @@ android {
         jvmTarget = '11'
     }
 
-    android {
-        buildFeatures {
-            compose = true
-        }
+    buildFeatures {
+        compose = true
+    }
 
-        composeOptions {
-            kotlinCompilerExtensionVersion = "1.4.4"
-        }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
 
 
-
 }
+
+/*publishing {
+    publications {
+        maven(MavenPublication) {
+
+
+
+        }
+
+    }
+}*/
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.github.Hie-HQ'
             artifactId = 'post-android-sdk'
-            version = "1.0.5"
-
+            version = "1.0.6"
 
         }
+    }
 
+    repositories {
+        mavenLocal()
     }
 }
+
+/*
+
+// Add the following line to add the 'android' component to the publishing configuration
+components {
+    release(MavenPublication) {
+        from android.libraryVariants.release
+    }
+}
+*/
 
 dependencies {
 

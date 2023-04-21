@@ -14,8 +14,9 @@ import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.post_sdk.BuildConfig
+
 import com.post_sdk.ui.theme.gainsboro
+import com.post_sdk.utils.PostSdkConstants
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
@@ -26,7 +27,7 @@ fun CircleImage(url: String,size:Int) {
             .background(Color.Transparent, CircleShape)
     ) {
         GlideImage(
-            model = BuildConfig.S3_BASE_URL+url,
+            model = PostSdkConstants.NetworkingConstants.S3_BASE_URL.value+url,
             contentDescription ="",
             modifier = Modifier.fillMaxSize(),
         )

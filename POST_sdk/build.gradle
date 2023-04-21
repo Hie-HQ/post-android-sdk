@@ -16,7 +16,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
+        buildConfigField "String",'BASE_URL',"\"https://post-dev-api.hiehq.com/api/v1/\""
+        buildConfigField "String",'S3_BASE_URL',"\"https://post-dev-new.s3.us-west-2.amazonaws.com/\""
         vectorDrawables {
             useSupportLibrary true
         }
@@ -37,7 +38,8 @@ android {
             jniDebuggable false
         }
     }
-    flavorDimensions"myFlavorDimension"
+    /*flavorDimensions"myFlavorDimension"
+
 
 
     productFlavors{
@@ -47,7 +49,7 @@ android {
             buildConfigField "String",'S3_BASE_URL',"\"https://post-dev-new.s3.us-west-2.amazonaws.com/\""
         }
 
-    }
+    }*/
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

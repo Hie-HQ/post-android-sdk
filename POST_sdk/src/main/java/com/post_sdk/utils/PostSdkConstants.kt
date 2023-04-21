@@ -1,6 +1,11 @@
 package com.post_sdk.utils
 
 class PostSdkConstants {
+    enum class NetworkingConstants(val value:String)
+    {
+        BASE_URL("https://post-dev-api.hiehq.com/api/v1/"),
+        S3_BASE_URL("https://post-dev-new.s3.us-west-2.amazonaws.com/")
+    }
 
     // enum for PREF
     enum class PrefConstants(val value:String)

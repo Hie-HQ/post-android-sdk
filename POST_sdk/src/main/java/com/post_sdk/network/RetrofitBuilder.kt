@@ -1,7 +1,9 @@
 package com.post_sdk.network
 
 import android.content.Context
-import com.post_sdk.BuildConfig
+import androidx.multidex.BuildConfig
+
+import com.post_sdk.utils.PostSdkConstants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +45,7 @@ object RetrofitBuilder {
         gsonConverterFactory: GsonConverterFactory
     ): ApiInterface =
         Retrofit.Builder().apply {
-            baseUrl(BuildConfig.BASE_URL)
+            baseUrl(PostSdkConstants.NetworkingConstants.BASE_URL.value)
             addConverterFactory(gsonConverterFactory)
             client(okHttpClient)
         }.build().create(ApiInterface::class.java)

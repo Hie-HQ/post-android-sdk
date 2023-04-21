@@ -87,7 +87,7 @@ class SetUpProfilePage : ComponentActivity() {
                     if (customFormData.customForm.backgroundImage!=null)
                     {
                         GlideImage(
-                            model = BuildConfig.S3_BASE_URL+customFormData.customForm.backgroundImage,
+                            model = PostSdkConstants.NetworkingConstants.S3_BASE_URL.value+customFormData.customForm.backgroundImage,
                             contentDescription ="",
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.FillBounds
