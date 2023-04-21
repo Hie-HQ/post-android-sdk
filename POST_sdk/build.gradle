@@ -39,6 +39,7 @@ android {
     }
     flavorDimensions"myFlavorDimension"
 
+
     productFlavors{
 
         postSdkDevelopment{

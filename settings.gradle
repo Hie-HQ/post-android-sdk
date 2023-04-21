@@ -5,6 +5,9 @@ pluginManagement {
         mavenCentral()
         maven { url "https://jitpack.io" }
     }
+   /* tasks.withType(JavaCompile) {
+        options.release = 11
+    }*/
 }
 
 
@@ -17,6 +20,9 @@ dependencyResolutionManagement {
             credentials { username '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' }
         }
     }
+    /*tasks.withType(JavaCompile) {
+        options.release = 11
+    }*/
 }
 rootProject.name = "POST_sdk"
 include ':app'
