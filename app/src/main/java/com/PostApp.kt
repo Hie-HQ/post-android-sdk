@@ -2,8 +2,9 @@ package com
 
 import android.app.Application
 import android.os.Bundle
-import android.support.multidex.MultiDex
+
 import androidx.appcompat.app.AppCompatActivity
+import androidx.multidex.MultiDex
 import com.post_sdk.ui.pages.login.OnBoardingPage
 
 import com.post_sdk.utils.PostSdkConstants
