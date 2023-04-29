@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
@@ -36,14 +36,12 @@ android {
 
     buildTypes {
         release {
-            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             proguardFile 'proguard-rules.pro'
             jniDebuggable false
         }
         debug {
-            debuggable true
             minifyEnabled false
             proguardFile 'proguard-rules.pro'
             jniDebuggable false
