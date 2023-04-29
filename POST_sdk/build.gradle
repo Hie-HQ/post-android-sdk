@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+    }
+}
+
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
@@ -5,6 +15,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
@@ -38,25 +49,14 @@ android {
             jniDebuggable false
         }
     }
-    /*flavorDimensions"myFlavorDimension"
 
-
-
-    productFlavors{
-
-        postSdkDevelopment{
-            buildConfigField "String",'BASE_URL',"\"https://post-dev-api.hiehq.com/api/v1/\""
-            buildConfigField "String",'S3_BASE_URL',"\"https://post-dev-new.s3.us-west-2.amazonaws.com/\""
-        }
-
-    }*/
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     buildFeatures {
         compose true
@@ -70,6 +70,23 @@ android {
         }
     }
 }
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.Hie-HQ'
+            artifactId = 'post-android-sdk'
+            version = "1.0.6"
+
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}
+
 
 dependencies {
 

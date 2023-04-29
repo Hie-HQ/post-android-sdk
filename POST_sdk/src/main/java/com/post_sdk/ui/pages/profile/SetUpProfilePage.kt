@@ -158,31 +158,6 @@ class SetUpProfilePage : ComponentActivity() {
         LocalContext.current.translucentActivity()
 
 
-
-
-
-       /* var addressFormAlpha = remember {
-            mutableStateOf(1f)
-        }
-
-
-          var customFormAlpha = remember {
-            mutableStateOf(1f)
-        }
-
-
-        if(customFormData.user.addresses.isNotEmpty()){
-            addressFormAlpha.value=1f
-            customFormAlpha.value=0f
-            AddressList(fields,customFormData,innerPadding,addressFormAlpha,customFormAlpha)
-        }
-        else
-        {
-           addressFormAlpha.value=0f
-            customFormAlpha.value=1f
-        }
-
-*/
         CustomFormSetUpProfile(fields,customFormData,innerPadding)
 
 

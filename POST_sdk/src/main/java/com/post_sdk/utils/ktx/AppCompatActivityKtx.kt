@@ -20,15 +20,4 @@ fun AppCompatActivity.startActivityWithTransition(cls: Class<*>?, bundle: Bundle
 }
 
 
-@Composable
-fun AppCompatActivity.startActivityWithTransitionCompose(cls: Class<*>?, bundle: Bundle?, flag: Int? )
-{
-    val intent = Intent(this,cls)
-    if (flag!=null)
-        intent.flags = flag
-    if (bundle!=null)
-        intent.putExtras(bundle)
-    startActivity(intent)
-    overridePendingTransition(R.anim.slide_up, R.anim.fade_out)
-}
 

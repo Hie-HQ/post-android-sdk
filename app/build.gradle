@@ -56,23 +56,13 @@ android {
 
 }
 
-/*publishing {
-    publications {
-        maven(MavenPublication) {
-
-
-
-        }
-
-    }
-}*/
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.github.Hie-HQ'
             artifactId = 'post-android-sdk'
-            version = "1.0.6"
+            version = "1.0.7"
 
         }
     }
@@ -81,16 +71,6 @@ publishing {
         mavenLocal()
     }
 }
-
-/*
-
-// Add the following line to add the 'android' component to the publishing configuration
-components {
-    release(MavenPublication) {
-        from android.libraryVariants.release
-    }
-}
-*/
 
 dependencies {
 
