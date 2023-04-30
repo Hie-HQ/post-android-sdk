@@ -17,6 +17,14 @@ plugins {
     id 'kotlin-android'
 }
 
+
+/**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
+/*
+def githubPropertiesFile = rootProject.file("github.properties");
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(githubPropertiesFile))
+*/
+
 android {
     compileSdk 33
 
@@ -57,6 +65,27 @@ android {
         kotlinCompilerExtensionVersion = "1.4.4"
     }
     namespace 'com.post_lib'
+
+
+/****GitHubPackages Path and credentials***/
+  /*  repositories {
+        maven {
+            name = "GitHubPackages"
+            *//*  Configure path to the library hosted on GitHub Packages Registry
+             *  Replace UserID with package owner userID and REPOSITORY with the repository name
+             *  e.g. "https://maven.pkg.github.com/enefce/AndroidLibraryForGitHubPackagesDemo"
+             *//*
+            //url = uri("https://maven.pkg.github.com/UserID/REPOSITORY")
+            url = uri("https://maven.pkg.github.com/Hie-HQ/post-android-sdk")
+
+            credentials {
+                *//**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key =PERSONAL_ACCESS_TOKEN**//*
+                username = System.getenv("GPR_USER") ?: githubProperties['Hie-HQ']
+                password = System.getenv("GPR_API_KEY") ?: githubProperties['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']
+
+            }
+        }
+    }*/
 
 
 }

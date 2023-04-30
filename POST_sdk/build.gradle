@@ -18,6 +18,23 @@ plugins {
     id 'maven-publish'
 }
 
+
+
+/**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
+/*
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
+def getVersionName = { ->
+    return "1.1.1"  // Replace with version Name
+}
+
+def getArtificatId = { ->
+    return "post-android-sdk" // Replace with library name ID
+}
+*/
+
+
 android {
     compileSdk 33
 
@@ -76,6 +93,7 @@ android {
     namespace 'com.post_sdk'
 }
 
+/*
 
 publishing {
     publications {
@@ -91,7 +109,35 @@ publishing {
         mavenLocal()
     }
 }
+*/
 
+/*
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'com.github.Hie-HQ'
+            artifactId getArtificatId()
+            version getVersionName()
+            artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            *//** Configure path of your package repository on Github
+             *  Replace GITHUB_USERID with your/organisation Github userID and REPOSITORY with the repository name on GitHub
+             *//*
+            url = uri("https://maven.pkg.github.com/Hie-HQ/post-android-sdk")
+
+            credentials {
+                *//**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**//*
+                username = System.getenv("GPR_USER") ?: githubProperties['Hie-HQ']
+                password = System.getenv("GPR_API_KEY") ?: githubProperties['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']
+            }
+        }
+    }
+}*/
 
 dependencies {
 
