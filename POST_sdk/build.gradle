@@ -145,7 +145,7 @@ dependencies {
 
 
     //Multidex
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
 
     //constraint
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
