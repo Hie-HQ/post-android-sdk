@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.0.0'
     }
 }
 
@@ -56,6 +56,12 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+    kotlin {
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of("17"))
+        }
+    }
+
     buildFeatures {
         compose true
     }
@@ -67,6 +73,7 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    namespace 'com.post_sdk'
 }
 
 
@@ -75,7 +82,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.github.Hie-HQ'
             artifactId = 'post-android-sdk'
-            version = "1.0.8"
+            version = "1.1.0"
 
         }
     }

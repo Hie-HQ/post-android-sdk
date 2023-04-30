@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.0.0'
     }
 }
 
@@ -15,7 +15,6 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
     id 'kotlin-android'
-   id 'maven-publish'
 }
 
 android {
@@ -45,6 +44,11 @@ android {
         jvmTarget = '17'
     }
 
+    kotlin {
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of("17"))
+        }
+    }
     buildFeatures {
         compose = true
     }
@@ -52,25 +56,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.4"
     }
+    namespace 'com.post_lib'
 
 
 }
 
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.Hie-HQ'
-            artifactId = 'post-android-sdk'
-            version = "1.0.8"
-
-        }
-    }
-
-    repositories {
-        mavenLocal()
-    }
-}
 
 dependencies {
 
